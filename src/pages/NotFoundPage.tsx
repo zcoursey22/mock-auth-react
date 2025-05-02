@@ -1,5 +1,5 @@
 import { Heading, Text } from "@chakra-ui/react";
-import Link from "../components/Link";
+import { Link } from "../components";
 
 const NotFoundPage = () => {
   return (
@@ -7,9 +7,7 @@ const NotFoundPage = () => {
       <Heading size="6xl">404</Heading>
       <div>
         <Text>Page not found.</Text>
-        <Link to="" goBack>
-          Go back
-        </Link>
+        <Link to="/">Go home</Link>
       </div>
     </main>
   );

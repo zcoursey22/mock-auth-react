@@ -2,7 +2,7 @@
 import "./main.css";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
-import { ColorModeProvider } from "./components/ui/color-mode";
+import { ColorModeProvider } from "./components/chakra/color-mode.tsx";
 import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 

@@ -1,12 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import { MockAuthProvider as AuthProvider } from "../lib/main";
-import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
-import PrivatePage from "./pages/PrivatePage";
-import { ColorMode, useColorMode } from "./components/ui/color-mode";
-import Layout from "./components/Layout";
-import NotFoundPage from "./pages/NotFoundPage";
-import RouteGuard from "./components/RouteGuard";
+import { ColorMode, useColorMode } from "./components/chakra/color-mode";
+import {
+  HomePage,
+  LoginPage,
+  NotFoundPage,
+  PrivatePage,
+  SignupPage,
+} from "./pages";
+import { Layout, RouteGuard } from "./components";
 
 const App = () => {
   const { setColorMode } = useColorMode();
@@ -26,6 +28,14 @@ const App = () => {
             element={
               <RouteGuard redirectTo="/" reversed>
                 <LoginPage />
+              </RouteGuard>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <RouteGuard redirectTo="/" reversed>
+                <SignupPage />
               </RouteGuard>
             }
           />

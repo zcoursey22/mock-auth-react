@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useContext } from "react";
 import MockAuthContext from "./MockAuthContext";
 
 interface Props {
@@ -6,8 +6,10 @@ interface Props {
 }
 
 const AuthProvider = ({ children }: Props) => {
+  const context = useContext(MockAuthContext);
+
   return (
-    <MockAuthContext.Provider value={{ user: undefined }}>
+    <MockAuthContext.Provider value={context}>
       {children}
     </MockAuthContext.Provider>
   );

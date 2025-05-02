@@ -4,6 +4,10 @@ interface IMockAuthContext {
   user?: string;
 }
 
-const MockAuthContext = createContext<IMockAuthContext | undefined>(undefined);
+const initialContext: IMockAuthContext = {
+  user: undefined,
+};
+
+const MockAuthContext = createContext<IMockAuthContext>(initialContext);
 
 export default MockAuthContext;
